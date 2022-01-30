@@ -1,5 +1,7 @@
 <html>
 <head>
+    <!--font-awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script>
         const QUOTES = [
         {
@@ -49,6 +51,11 @@
         getNewQuote();
         }
 
+        function getRandomDarkColour(){
+        return "hsl(" + 360 * Math.random() + ',' +
+                    (60 + 10 * Math.random()) + '%,' +
+                    (25 + 10 * Math.random()) + '%)'
+        }
         /*get a new quote*/
         function getNewQuote()
         {
@@ -57,26 +64,80 @@
         /*get the text element*/
         document.getElementById("text").innerText = QUOTES[randomIndex].quote;
         /*get the author*/
-        document.getElementById("author").innerText = QUOTES[randomIndex].author; 
+        document.getElementById("author").innerText = "- "+QUOTES[randomIndex].author; 
         /*get a link to tweet the quote*/
         let twitterLink = "https://twitter.com/intent/tweet?&text=" + QUOTES[randomIndex].quote +" -"+ QUOTES[randomIndex].author;
         document.getElementById("tweet-quote").href = twitterLink
+        /*get random colour*/
+        var colour = getRandomDarkColour()
+        document.body.style.background = colour;
+        document.getElementById("new-quote").style.background = colour;
+        document.getElementById("twitter-ico").style.color = colour;
         }
     </script>
+    <title>Random quotes</title>
     <style>
         *{
             font-size: 1.5rem;
+            Font-family: Bodoni MT, Bodoni 72, Didot, Didot LT STD, Hoefler Text, Garamond, Times New Roman;
+            color: rgba(0,0,0,0.6);
+            text-shadow: 2px 8px 6px rgba(0,0,0,0.2),0px -5px 16px rgba(255,255,255,0.3);
+            text-align: center
         }
+        h1{
+            font-size: 2rem;
+            text-align: center;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+        #box
+        {
+            background-color:white;
+            margin-right: auto;
+            margin-left:  auto; 
+            max-width: 960px; 
+            padding-right: 10px; 
+            padding-left:  10px; 
+            border-radius: 10px;
+        }
+        #text,#author{
+            padding: 20px;
+            text-align: left
+        }
+    .line.bold {
+        border: solid 5px rgba(231, 231, 231, 0.6);
+        color: rgba(41, 41, 41, 0.438);
+    } 
+    .btn {
+        position: relative;
+        top: 0;
+        padding: 0.5rem 0.5rem;
+        margin: 1rem 1rem;
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        outline: none;
+        border-radius: 250px 30px 225px 15px/30px 225px 15px 250px;
+}
+    .btn:hover {
+        top: -3px;
+        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+    }
     </style>
 </head>
 <body>
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <h1 style='color:white'>Random Quote Machine</h1>
+    <div id='box' style='background-color: white;'>
     <wrapper id='quote-box'>
         <div id='text'></div>
         <div id='author'></div>
-        <button id='new-quote' onclick='getNewQuote()'>New quote</button>
+        <button id='new-quote' onclick='getNewQuote()' class="btn line bold" style="color: white;" >New quote</button>
+        <br>
         <a id='tweet-quote' target="_blank"
-            href='#'>Tweet quote</a>
-    </wrapper>
+            href='#'>
+        <i class="fa fa-twitter fa-lg" id='twitter-ico' style='padding-bottom:25px'></i></a>
+    </wrapper></div>
 </body>  
 </html>
