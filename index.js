@@ -42,6 +42,7 @@
         ]
         window.onload = init;
         /*when the page loads*/
+        var randomIndex = Math.floor(Math.random()*QUOTES.length) 
         function init(){
         getNewQuote();
         }
@@ -54,8 +55,14 @@
         /*get a new quote*/
         function getNewQuote()
         {
-        /*generate random number*/
-        let randomIndex = Math.floor(Math.random()*QUOTES.length)   
+        /*generate a new random number*/
+        /*which is different from the last 'randomIndex' */
+        let tempRandom=randomIndex;
+        while(tempRandom==randomIndex){
+            tempRandom=Math.floor(Math.random()*QUOTES.length); 
+        }
+        randomIndex = tempRandom;
+        
         /*get the text element*/
         document.getElementById("text").innerText = QUOTES[randomIndex].quote;
         /*get the author*/
