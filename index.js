@@ -1,4 +1,4 @@
- const QUOTES = [
+const QUOTES = [
         {
             quote: "Through others we become ourselves.",
             author: "Lev S. Vygotsky"
@@ -39,6 +39,35 @@
             quote: "I don't harp on the negative because if you do, then there's no progression.There's no froward movement. You got to always look on the bright side of things, and we are in control. Like, you have control over the choices you make.",
             author: "Taraji P. Henson"
             },
+                        {
+            quote: "Life is what happens when you’re busy making other plans.",
+            author: "John Lennon"
+            },
+            {
+            quote: "You only live once, but if you do it right, once is enough.",
+            author: "Mae West"
+            },
+
+            {
+            quote: "Many of life’s failures are people who did not realize how close they were to success when they gave up.",
+            author: "Thomas A. Edison"
+            },
+            {
+            quote: "Never let the fear of striking out keep you from playing the game.",
+            author: "Babe Ruth"
+            },
+            {
+            quote: "Your time is limited, so don’t waste it living someone else’s life. Don’t be trapped by dogma – which is living with the results of other people’s thinking.",
+            author: "Steve Jobs"
+            },
+            {
+            quote: "If life were predictable it would cease to be life, and be without flavor.",
+            author: "Eleanor Roosevelt"      
+            },
+            {
+            quote: "Life is not a problem to be solved, but a reality to be experienced.",
+            author: "Soren Kierkegaard"
+            },
         ]
         window.onload = init;
         /*when the page loads*/
@@ -62,7 +91,7 @@
             tempRandom=Math.floor(Math.random()*QUOTES.length); 
         }
         randomIndex = tempRandom;
-        
+
         /*get the text element*/
         document.getElementById("text").innerText = QUOTES[randomIndex].quote;
         /*get the author*/
