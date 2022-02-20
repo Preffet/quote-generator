@@ -68,6 +68,14 @@ const QUOTES = [
             quote: "Life is not a problem to be solved, but a reality to be experienced.",
             author: "Soren Kierkegaard"
             },
+            {
+            quote: "“Instead of worrying about what you cannot control, shift your energy to what you can create.”",
+            author: "Roy T. Bennett"
+            },
+                {
+            quote: "Life is about accepting the challenges along the way, choosing to keep moving forward, and savoring the journey.",
+            author: "Roy T. Bennett"
+            },
         ]
         window.onload = init;
         /*when the page loads*/
