@@ -76,6 +76,14 @@ const QUOTES = [
             quote: "Life is about accepting the challenges along the way, choosing to keep moving forward, and savoring the journey.",
             author: "Roy T. Bennett"
             },
+            {
+            quote: "Start where you are. Use what you have. Do what you can.",
+            author: "Arthur Ashe"
+            },
+            {
+            quote: "Do what is right, not what is easy nor what is popular.",
+            author: "Roy T. Bennett"
+            },
         ]
         window.onload = init;
         /*when the page loads*/
